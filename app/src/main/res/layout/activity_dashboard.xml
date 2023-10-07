@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bgc"
+    tools:context=".DashboardActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/topbar_bg_design"
+        android:includeFontPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/topBarMenu"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/menu_icon"
+            android:includeFontPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/topAppName"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="-5dp"
+            android:fontFamily="@font/advent_pro_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="QuizThink"
+            android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/topUserIcon"
+            app:layout_constraintStart_toEndOf="@id/topBarMenu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/topUserIcon"
+            style="@style/ShapeableImageViewStyle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:layout_marginHorizontal="25dp"
+            android:includeFontPadding="false"
+            android:src="@drawable/user_icon_demo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dashboardBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/dashboard_bg_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBarLayout">
+
+        <TextView
+            android:id="@+id/dashboardTotalQuesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/advent_pro_medium"
+            android:text="Total Questions"
+            android:textColor="@color/gray_white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/dashboardCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dashboardCenter" />
+
+        <TextView
+            android:id="@+id/dashboardTotalQuesTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="200"
+            android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/dashboardCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dashboardTotalQuesLabel" />
+
+        <View
+            android:id="@+id/dashboardCenter"
+            android:layout_width="1dp"
+            android:layout_height="80dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dashboardScoreTextLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/advent_pro_medium"
+            android:text="Your Score"
+            android:textColor="@color/gray_white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/dashboardCenter"
+            app:layout_constraintTop_toTopOf="@id/dashboardCenter" />
+
+        <TextView
+            android:id="@+id/dashboardScoreTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="50"
+            android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/dashboardCenter"
+            app:layout_constraintTop_toTopOf="@id/dashboardScoreTextLabel" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/user_icon_demo"
+            style="@style/ShapeableImageViewStyle"
+            app:layout_constraintStart_toEndOf="@id/dashboardScoreTV"
+            app:layout_constraintTop_toBottomOf="@id/dashboardScoreTV"
+            android:layout_marginTop="-25dp"
+            android:scaleType="fitXY"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="00dp"
+        android:id="@+id/dashboardScrollView"
+        app:layout_constraintTop_toBottomOf="@id/dashboardBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dashboardUpgradeBtn"
+        android:layout_marginVertical="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/artCategory"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/category_bg_layout"
+                >
+                <ImageView
+                    android:id="@+id/artCategoryIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/art_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="15dp"
+                    />
+                <TextView
+                    android:id="@+id/artCategoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Art and Literature"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/advent_pro_medium"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toEndOf="@id/artCategoryIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:includeFontPadding="false"
+                    android:layout_marginLeft="18dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/gkCategory"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/category_bg_layout"
+                >
+                <ImageView
+                    android:id="@+id/gkCategoryIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/general_knowledge_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="15dp"
+                    />
+                <TextView
+                    android:id="@+id/gkCategoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="General Knowledge"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/advent_pro_medium"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toEndOf="@id/gkCategoryIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:includeFontPadding="false"
+                    android:layout_marginLeft="18dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scienceCategory"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/category_bg_layout"
+                >
+                <ImageView
+                    android:id="@+id/scienceCategoryIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/science_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="15dp"
+                    />
+                <TextView
+                    android:id="@+id/scienceCategoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Science and Nature"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/advent_pro_medium"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toEndOf="@id/scienceCategoryIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:includeFontPadding="false"
+                    android:layout_marginLeft="18dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/technologyCategory"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/category_bg_layout"
+                >
+                <ImageView
+                    android:id="@+id/technologyCategoryIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/technology_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="15dp"
+                    />
+                <TextView
+                    android:id="@+id/technologyCategoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tech and Gadgets"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/advent_pro_medium"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toEndOf="@id/technologyCategoryIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:includeFontPadding="false"
+                    android:layout_marginLeft="18dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/devCategory"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/category_bg_layout"
+                >
+                <ImageView
+                    android:id="@+id/devCategoryIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/developer_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="15dp"
+                    />
+                <TextView
+                    android:id="@+id/devCategoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coding"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/advent_pro_medium"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toEndOf="@id/devCategoryIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:includeFontPadding="false"
+                    android:layout_marginLeft="18dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/socialCategory"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/category_bg_layout"
+                >
+                <ImageView
+                    android:id="@+id/socialCategoryIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/social_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="15dp"
+                    />
+                <TextView
+                    android:id="@+id/socialCategoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Know About Society"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/advent_pro_medium"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toEndOf="@id/socialCategoryIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:includeFontPadding="false"
+                    android:layout_marginLeft="18dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dashboardUpgradeBtn"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:text="UPGRADE"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:layout_marginVertical="5dp"
+        android:fontFamily="@font/advent_pro_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/dashboard_upgrade_btn_design"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

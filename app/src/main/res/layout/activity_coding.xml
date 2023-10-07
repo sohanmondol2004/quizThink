@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CodingActivity"
+    android:background="@color/main_bgc">
+
+<!--    Coding Top Bar-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/codingTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/header_bgc"
+        >
+        <ImageView
+            android:id="@+id/codingTopBarIcon"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/developer_icon"
+            android:layout_marginHorizontal="15dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/codingTopBarIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Play Quiz with Coding"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="28sp"
+            android:fontFamily="@font/advent_pro_medium"
+            android:layout_marginHorizontal="15dp"
+            />
+        <ImageView
+            android:id="@+id/codingTopBarCloseIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="15dp"
+            android:src="@drawable/close_icon"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    Container Layout Design-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/codingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/codingTopBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="25dp"
+        >
+
+<!--        Container Top Bar Start-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/codingContainerTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <TextView
+                android:id="@+id/codingContainerTotalQuizLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Quiz: "
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:fontFamily="@font/advent_pro_medium"
+                />
+            <TextView
+                android:id="@+id/codingContainerTotalQuizNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/codingContainerTotalQuizLabel"
+                app:layout_constraintBottom_toBottomOf="@id/codingContainerTotalQuizLabel"
+                app:layout_constraintStart_toEndOf="@id/codingContainerTotalQuizLabel"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:fontFamily="@font/digit_font"
+                />
+            <TextView
+                android:id="@+id/codingContainerTimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/codingContainerTimeCounter"
+                android:text="Time: "
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:fontFamily="@font/advent_pro_medium"
+                />
+
+            <TextView
+                android:id="@+id/codingContainerTimeCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/codingContainerTimeLabel"
+                app:layout_constraintBottom_toBottomOf="@id/codingContainerTimeLabel"
+                android:text="1:00 min"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:fontFamily="@font/digit_font"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                app:layout_constraintTop_toBottomOf="@id/codingContainerTotalQuizLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/white"
+                android:layout_marginVertical="2dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        Quiz Question and Answer Layout design-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/codingQuizQuesAnsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/codingContainerTopBar"
+            app:layout_constraintBottom_toTopOf="@id/codingContainerButtonLayout"
+            android:layout_marginVertical="15dp"
+            >
+            <TextView
+                android:id="@+id/codingQuestionTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginVertical="15dp"
+                android:text="Is this a demo question?"
+                android:textColor="@color/gray_white"
+                android:textSize="19sp"
+                />
+
+<!--            Quiz Options Label-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/codingOptionsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/codingQuestionTV"
+                android:layout_marginVertical="15dp"
+                >
+                <RadioGroup
+                    android:id="@+id/codingQuizOptionGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:orientation="vertical"
+                    >
+                    <RadioButton
+                        android:id="@+id/codingQuizOption1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/quiz_option_background"
+                        android:layoutDirection="rtl"
+                        android:button="@drawable/quiz_option_button_design"
+                        tools:text="Option 1"
+                        android:paddingHorizontal="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_margin="8dp"
+                        />
+                    <RadioButton
+                        android:id="@+id/codingQuizOption2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/quiz_option_background"
+                        android:layoutDirection="rtl"
+                        android:button="@drawable/quiz_option_button_design"
+                        tools:text="Option 2"
+                        android:paddingHorizontal="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_margin="8dp"
+                        />
+                    <RadioButton
+                        android:id="@+id/codingQuizOption3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/quiz_option_background"
+                        android:layoutDirection="rtl"
+                        android:button="@drawable/quiz_option_button_design"
+                        tools:text="Option 3"
+                        android:paddingHorizontal="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_margin="8dp"
+                        />
+                    <RadioButton
+                        android:id="@+id/codingQuizOption4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/quiz_option_background"
+                        android:layoutDirection="rtl"
+                        android:button="@drawable/quiz_option_button_design"
+                        tools:text="Option 4"
+                        android:paddingHorizontal="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_margin="8dp"
+                        />
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        Result show instruction hidden Layout-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/afterFinishAllQuizHiddenLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Click &quot;Check Result&quot; Button to check your score"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                android:gravity="center"
+                android:background="@drawable/show_result_message_background"
+                android:paddingVertical="25sp"
+                android:fontFamily="@font/advent_pro_medium"
+                android:textStyle="bold"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--        Buttons Design Start-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/codingContainerButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/codingNextQuesBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/codingCheckResultBtn"
+                android:background="@drawable/category_submit_btn_design"
+                android:layout_marginBottom="8dp"
+                android:text="Next Ques"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                android:textColor="@color/white"
+                android:paddingVertical="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/advent_pro_medium"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/codingQuizRestartBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/codingCheckResultBtn"
+                android:background="@drawable/category_submit_btn_design"
+                android:layout_marginBottom="8dp"
+                android:text="Play Again"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                android:paddingVertical="10dp"
+                android:fontFamily="@font/advent_pro_medium"
+                android:textStyle="bold"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/codingCheckResultBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/check_result_btn_design"
+                android:text="Check Result"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                android:paddingVertical="10dp"
+                android:textColor="@color/dashboard_bgc"
+                android:textStyle="bold"
+                android:fontFamily="@font/advent_pro_medium"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

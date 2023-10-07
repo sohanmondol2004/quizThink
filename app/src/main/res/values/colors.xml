@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="red">#F80000</color>
+    <color name="minus_black">#302C2C</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_white">#EFDDCD</color>
+    <color name="header_bgc">#2e425a</color>
+    <color name="main_bgc">#242b3e</color>
+    <color name="btn_bgc">#c9dae4</color>
+    <color name="dashboard_bgc">#e78230</color>
+    <color name="score_page_bgc">#ccdde7</color>
+    <color name="score_text">#35b96c</color>
+    <color name="attempt_ques_text">#2462a0</color>
+</resources>

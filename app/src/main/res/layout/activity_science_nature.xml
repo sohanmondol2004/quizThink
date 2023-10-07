@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScienceNatureActivity"
+    android:background="@color/main_bgc">
+
+
+<!--    TopBar Design Start-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scienceNatureTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/header_bgc">
+        <ImageView
+            android:id="@+id/scienceNatureTopBarIcon"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/science_icon"
+            android:layout_marginHorizontal="15dp"
+            />
+        <TextView
+            android:id="@+id/scienceNatureTopBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/scienceNatureTopBarIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Science and Nature"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="28dp"
+            android:layout_marginHorizontal="15dp"
+            android:fontFamily="@font/advent_pro_medium"
+            />
+        <ImageView
+            android:id="@+id/scienceNatureTopBarClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="15dp"
+            android:src="@drawable/close_icon"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    Container Design Start-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scienceNatureContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/scienceNatureTopBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="25dp"
+        >
+
+<!--        Container Top bar design start-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scienceNatureContainerTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            <TextView
+                android:id="@+id/scienceNatureContainerTopBarTotalQuizLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Quiz: "
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/advent_pro_medium"
+                />
+            <TextView
+                android:id="@+id/scienceNatureContainerTopBarTotalQuizTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/scienceNatureContainerTopBarTotalQuizLabel"
+                app:layout_constraintTop_toTopOf="@id/scienceNatureContainerTopBarTotalQuizLabel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="00"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/digit_font"
+                />
+            <TextView
+                android:id="@+id/scienceNatureContainerTopBarQuizTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Time: 1:00 min"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:fontFamily="@font/advent_pro_medium"
+                />
+            <View
+                android:id="@+id/scienceNatureContainerTopBarUnderLine"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                app:layout_constraintTop_toBottomOf="@id/scienceNatureContainerTopBarTotalQuizTV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/white"
+                android:layout_marginVertical="5dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        Container Question Options Layout Design-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scienceNatureQuesAnsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scienceNatureContainerTopBar">
+
+            <TextView
+                android:id="@+id/scienceNatureQuesTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:textColor="@color/gray_white"
+                android:textSize="19dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Is this a demo question?" />
+
+            <!--            Options Layout Design-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scienceNatureQuesTV"
+
+                >
+
+                <RadioGroup
+                    android:id="@+id/scienceNatureOptionGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/scienceNatureOption1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/quiz_option_background"
+                        android:button="@drawable/quiz_option_button_design"
+                        android:layoutDirection="rtl"
+                        android:paddingHorizontal="15dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tools:text="Option 1" />
+
+                    <RadioButton
+                        android:id="@+id/scienceNatureOption2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/quiz_option_background"
+                        android:button="@drawable/quiz_option_button_design"
+                        android:layoutDirection="rtl"
+                        android:paddingHorizontal="15dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tools:text="Option 2" />
+
+                    <RadioButton
+                        android:id="@+id/scienceNatureOption3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/quiz_option_background"
+                        android:button="@drawable/quiz_option_button_design"
+                        android:layoutDirection="rtl"
+                        android:paddingHorizontal="15dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tools:text="Option 3" />
+
+                    <RadioButton
+                        android:id="@+id/scienceNatureOption4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/quiz_option_background"
+                        android:button="@drawable/quiz_option_button_design"
+                        android:layoutDirection="rtl"
+                        android:paddingHorizontal="15dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tools:text="Option 4" />
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--        Buttons Design Start-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scienceNatureButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/scienceNatureNextQuesBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/scienceNatureCheckResultBtn"
+                android:background="@drawable/category_submit_btn_design"
+                android:text="Next Question"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                android:fontFamily="@font/advent_pro_medium"
+                android:paddingVertical="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="visible"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/scienceNatureCheckResultBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Check Result"
+                android:textColor="@color/dashboard_bgc"
+                android:background="@drawable/check_result_btn_design"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                android:fontFamily="@font/advent_pro_medium"
+                android:paddingVertical="10dp"
+                />
+
+<!--            Visible Restart button when all quiz end this button will be shown-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/scienceNatureRestartQuesBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/scienceNatureCheckResultBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Play Again"
+                android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+                android:background="@drawable/category_submit_btn_design"
+                android:layout_marginBottom="10dp"
+                android:paddingVertical="10dp"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--        Invisible display Layout after playing all quiz will be shown-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/afterFinishAllQuizHiddenLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="You finished all Questions. Click &quot;Check Result&quot; button to see your result"
+                android:textColor="@color/black"
+                android:background="@drawable/show_result_message_background"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:padding="15dp"
+                android:fontFamily="@font/advent_pro_medium"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
